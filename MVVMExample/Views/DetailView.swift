@@ -26,6 +26,7 @@ struct DetailView: View {
       }
  
       Text("$\(productInfo.price, specifier: "%.2f")")
+//      Text(productInfo.price as NSNumber, formatter: NumberFormatter.currency)
       Text(productInfo.description)
       
       

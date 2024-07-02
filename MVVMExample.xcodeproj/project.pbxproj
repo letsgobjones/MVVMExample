@@ -15,6 +15,7 @@
 		CA51361C2C2A8BCF00DA3BA4 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA51361B2C2A8BCF00DA3BA4 /* Product.swift */; };
 		CA5136212C2A9A5400DA3BA4 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5136202C2A9A5400DA3BA4 /* DetailView.swift */; };
 		CACAACC72C33A36F0075F08C /* ProductStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACAACC62C33A36F0075F08C /* ProductStore.swift */; };
+		CACAACCA2C33A81A0075F08C /* NumberFormater+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACAACC92C33A81A0075F08C /* NumberFormater+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		CA51361B2C2A8BCF00DA3BA4 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		CA5136202C2A9A5400DA3BA4 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		CACAACC62C33A36F0075F08C /* ProductStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductStore.swift; sourceTree = "<group>"; };
+		CACAACC92C33A81A0075F08C /* NumberFormater+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberFormater+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				CA51361D2C2A8F2200DA3BA4 /* ViewModels */,
 				CA5136172C2A8AE900DA3BA4 /* Services */,
 				CA51361A2C2A8BBA00DA3BA4 /* Models */,
+				CACAACC82C33A7F20075F08C /* Extensions */,
 				CA51360D2C2A8A7C00DA3BA4 /* Assets.xcassets */,
 				CA51360F2C2A8A7C00DA3BA4 /* Preview Content */,
 			);
@@ -109,6 +112,14 @@
 				CA5136202C2A9A5400DA3BA4 /* DetailView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		CACAACC82C33A7F20075F08C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CACAACC92C33A81A0075F08C /* NumberFormater+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,6 +192,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CACAACCA2C33A81A0075F08C /* NumberFormater+Extension.swift in Sources */,
 				CA51360C2C2A8A7B00DA3BA4 /* ContentView.swift in Sources */,
 				CA5136212C2A9A5400DA3BA4 /* DetailView.swift in Sources */,
 				CA51361C2C2A8BCF00DA3BA4 /* Product.swift in Sources */,
