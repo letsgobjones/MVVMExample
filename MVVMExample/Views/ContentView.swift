@@ -8,14 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
-  @StateObject var service = Webservice()
-  
+  @EnvironmentObject private var productStore: ProductStore
   
   var body: some View {
     NavigationStack {
       VStack {
         List {
-          ForEach(service.products, id: \.id) { product in
+          ForEach(productStore.products, id: \.id) { product in
             NavigationLink( destination:  DetailView(productInfo: product)) {
               Text(product.title)
             }
@@ -28,7 +27,7 @@ struct ContentView: View {
       .navigationTitle("Home")
     }.task {
       do {
-        try await service.getProducts()
+        try await productStore.populateProducts()
       } catch {
         print(error)
       }
@@ -38,5 +37,6 @@ struct ContentView: View {
 
 
 #Preview {
-    ContentView()
+  ContentView()
+    .environmentObject(ProductStore(webservice: Webservice()))
 }

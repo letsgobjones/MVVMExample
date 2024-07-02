@@ -8,26 +8,17 @@
 import Foundation
 
 
-
-@MainActor
-class Webservice: ObservableObject {
-  enum NetworkError: Error {
-    case invalidHTTPResponse
-    case invalidURL
-    case decodeError
-    case invalidReponse
-    
-  }
-
-  @Published var products: [Product] = []
+enum NetworkError: Error {
+  case invalidHTTPResponse
+  case invalidURL
+  case decodeError
+  case invalidReponse
   
-  init() {
-    Task {
-      try await getProducts()
-    }
-  }
-  
-  func getProducts() async throws /*-> [Product] */{
+}
+
+
+class Webservice {
+  func fetchProducts() async throws -> [Product]  {
     
     
     guard let url = URL(string: "https://fakestoreapi.com/products") else {
@@ -36,7 +27,6 @@ class Webservice: ObservableObject {
     
     
    let (data, response) =  try await URLSession.shared.data(from: url)
-    
     guard let httpResponse = response as? HTTPURLResponse, 
             httpResponse.statusCode == 200 else {
      throw NetworkError.invalidHTTPResponse
@@ -47,6 +37,6 @@ class Webservice: ObservableObject {
      throw NetworkError.decodeError
     }
     
-    self.products = products
+   return products
   }
 }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DetailView: View {
-//  @ObservedObject var service: Webservice
+  
   let productInfo: Product
   var body: some View {
     VStack {
