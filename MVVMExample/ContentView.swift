@@ -8,16 +8,34 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
+  @StateObject var service = Webservice()
+  
+  
+  var body: some View {
+    NavigationStack {
+      VStack {
+        List {
+          ForEach(service.products, id: \.id) { product in
+            NavigationLink( destination:  DetailView(productInfo: product)) {
+              Text(product.title)
+            }
+          }
+        }.listStyle(.plain)
+        
+      }
+      .padding()
+      
+      .navigationTitle("Home")
+    }.task {
+      do {
+        try await service.getProducts()
+      } catch {
+        print(error)
+      }
     }
-}
+    }
+  }
+
 
 #Preview {
     ContentView()
